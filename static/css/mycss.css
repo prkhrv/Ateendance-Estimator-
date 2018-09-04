@@ -1,0 +1,114 @@
+@font-face{
+	font-family: gta;
+	src:url('../fonts/gta.ttf');
+}
+
+
+body{
+	margin: 0;
+	background-color: #333333;
+}
+
+.a{
+	float: left;
+	margin-left: 20px;
+}
+.nav{
+	overflow: hidden;
+	background-color:  #00CC99 ;
+	font-family: gta;
+}
+
+.nav a{
+	color: #333333;
+	text-align: center;
+	padding: 15px;
+	text-decoration: none;
+	font-size: 22px;
+	float: left;
+	cursor: pointer;
+}
+
+.nav a:hover{
+	background-color: #333333;
+	color: #00CC99 ;
+}
+
+
+#logo{
+  color: #00CC99 ;
+  text-align: center;
+  overflow: hidden;
+  font-size: 4.2vw;
+  font-family: gta;
+  margin-top: -20px;
+}
+
+
+#main{
+	text-align: center;
+	color: #00CC99 ;
+	font-size: 2.3vw;
+	font-family: 'Poiret One', cursive;
+	max-width: 700px;
+}
+
+.b{
+	padding: 1vw;
+	background-color: #333333;
+	border: 1px solid #00CC99 ;
+	text-align: justify;
+}
+select{
+	width: 20vw;
+	float: right;
+}
+
+.btn{
+	padding: 8px;
+	background-color: #00CC99 ;
+	color: #333333;
+	border:none;
+	border-radius: 5px;
+	max-width: 150px;
+	cursor: pointer;
+	font-size: 1.6vw;
+	font-family: 'Poiret One', cursive;
+}
+
+input[type="text"]{
+	float: right;
+	max-width: 150px;
+}
+#green{
+	color: #00CC99 ;
+}
+#red{
+	color: red;
+}
+
+@media only screen and (max-width: 800px) {
+    input[type="text"] {
+
+    	max-width: 50px;
+    	padding: 2px;
+
+    }
+    select{
+    	max-width: 50px;
+    	padding: 1px;
+    }
+
+    #main{
+    	height: 300px;
+    	font-size: 5.3vw;
+    }
+
+    #logo{
+    	font-size: 7vw;
+    }
+
+    .btn{
+    	font-size: 5vw;
+    }
+}

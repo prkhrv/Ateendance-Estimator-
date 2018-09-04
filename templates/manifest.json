@@ -1,0 +1,20 @@
+{
+  "name": "The Attendance",
+  "short_name": "Attendance",
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
+  "start_url": "https://prakhar01.pythonanywhere.com",
+  "display": "standalone",
+  "orientation": "portrait",
+  "description": "Pithy description (132 characters or less, no HTML)",
+  "version": "0.0.0.1",
+  "manifest_version": 2,
+  "icons": [
+    {
+   "src": "../static/android-icon-192x192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "density": "4.0"
+  }
+ ]
+}

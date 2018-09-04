@@ -1,0 +1,92 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Attendance</title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/mycss.css" %}">
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+</head>
+<body>
+	<div class="nav">
+		<img class="a" src="{% static "logo.png" %}" height="auto" width="57">
+		<a href="#">Home</a>
+		<a href="#">Login</a>
+	</div>
+	<div id="logo">
+		<h1>The Attendance</h1>
+	</div>
+	<center>
+	<div id="main">
+		<form method="post">
+			{% csrf_token %}
+			<label for="lectures_per_day">Select Total Lectures Per day :</label>
+			<select class="b" id="lectures_per_day" name="a" required="">
+				<option value="" disabled selected="">Select</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+			</select>
+			<br><br>
+			<label for="lectures_attended">Enter Number of Lectures Attended:</label>
+			<input class="b" type="text" name="b" id="lectures_attended" required="" placeholder="Lectures Attended"><br><br>
+			<label for="total_lectures">Total Number of Lectures:</label>
+			<input type="text" class="b" name="c" id="total_lectures" required="" placeholder="Total lectures"><br><br>
+			<label for="lectures_missed">No. ofLectures Missed:</label>
+			<input type="text" class="b" id="lectures_missed" name="d" required="" placeholder="Lectures Missed"><br><br>
+			<label for="days">In No. of Days:</label>
+			<input type="text" name="e" id="days" class="b" required="" placeholder="In No. of Days"><br><br>
+
+			<center>
+			<input type="submit" value="Submit" class="btn"></center>
+		</form>
+
+			<br>
+			{% if new|add:0 >= per|add:0 %}
+        <div id="green">
+        Your Current Attendance is = {{new}}<br></div>
+    {% else %}
+        <div id="red">
+        Your Current Attendance is = {{new}}<br></div>
+    {% endif %}
+		{% if new1|add:0 >= per|add:0 %}
+        <div id="green">
+        Your Expected Attendance is = {{new1}}</div>
+    {% else %}
+        <div id="red">
+        Your Expected Attendance is = {{new1}}</div>
+    {% endif %}
+
+
+
+
+	</div></center>
+
+	<script>
+function myFunction() {
+    var x,y;
+    x = document.getElementById("lectures_attended").value;
+    y = document.getElementById("total_lectures").value;
+    a = parseInt(x,10);
+    b = parseInt(y,10)
+  if(a > b) {
+    lectures_attended.setCustomValidity("Attended lectures can't be greater than total");
+  } else {
+    lectures_attended.setCustomValidity('');
+  }
+}
+
+lectures_attended.onchange = myFunction;
+total_lectures.onkeyup = myFunction;
+</script>
+
+<script>
+if ('serviceWorker' in navigator){
+	navigator.serviceWorker
+	.register('./serviceWorker.js')
+	.then(function(){console.log("Service Worker registered");});
+
+}
+</script>
+
+</body>
+</html>
